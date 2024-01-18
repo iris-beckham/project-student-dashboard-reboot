@@ -8,6 +8,7 @@ import Student from "./components/Student";
 // import { getAllStudents } from "./api/fetch";
 
 function App() {
+  // date function
   const formattedDateOfBirth = (dob) => {
     // Parse the date string
     const dobArray = dob.split("/");
@@ -23,6 +24,14 @@ function App() {
     const result = formattedDate.toLocaleDateString("en-US", options);
     return result;
   };
+
+  // on track to graduate fx
+  const onTrackToGraduate = (student) => {
+    const { resume, linkedin, mockInterview, github } = student.certifications;
+    if (resume && linkedin && mockInterview && github) {
+      return true;
+    }
+  };
   return (
     <div>
       <Header />
@@ -30,11 +39,21 @@ function App() {
         <Route path="/">
           <Route
             index
-            element={<Home formattedDateOfBirth={formattedDateOfBirth} />}
+            element={
+              <Home
+                onTrackToGraduate={onTrackToGraduate}
+                formattedDateOfBirth={formattedDateOfBirth}
+              />
+            }
           />
           <Route
             path=":id"
-            element={<Student formattedDateOfBirth={formattedDateOfBirth} />}
+            element={
+              <Student
+                onTrackToGraduate={onTrackToGraduate}
+                formattedDateOfBirth={formattedDateOfBirth}
+              />
+            }
           />
         </Route>
         <Route path="/about" element={<About />}></Route>
