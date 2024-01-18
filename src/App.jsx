@@ -8,13 +8,34 @@ import Student from "./components/Student";
 // import { getAllStudents } from "./api/fetch";
 
 function App() {
+  const formattedDateOfBirth = (dob) => {
+    // Parse the date string
+    const dobArray = dob.split("/");
+    const month = parseInt(dobArray[0], 10);
+    const day = parseInt(dobArray[1], 10);
+    const year = parseInt(dobArray[2], 10);
+
+    // Create a Date object
+    const formattedDate = new Date(year, month - 1, day);
+
+    // Format the date to "Month day, Year"
+    const options = { month: "long", day: "numeric", year: "numeric" };
+    const result = formattedDate.toLocaleDateString("en-US", options);
+    return result;
+  };
   return (
     <div>
       <Header />
       <Routes>
         <Route path="/">
-          <Route index element={<Home />} />
-          <Route path=":id" element={<Student />} />
+          <Route
+            index
+            element={<Home formattedDateOfBirth={formattedDateOfBirth} />}
+          />
+          <Route
+            path=":id"
+            element={<Student formattedDateOfBirth={formattedDateOfBirth} />}
+          />
         </Route>
         <Route path="/about" element={<About />}></Route>
       </Routes>
