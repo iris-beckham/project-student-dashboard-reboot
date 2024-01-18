@@ -32,7 +32,7 @@ const Table = ({ student }) => {
           </tr>
           <tr>
             <td>
-              Percent of Goal Achieved:
+              Percent of Goal Achieved:{" "}
               {Math.floor((current.total / goal.total) * 100)}%
             </td>
             <td></td>
