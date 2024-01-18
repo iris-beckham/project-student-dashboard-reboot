@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Table from "./Table";
 
-const Student = ({ formattedDateOfBirth }) => {
+const Student = ({ formattedDateOfBirth, onTrackToGraduate }) => {
   const { id } = useParams();
 
   //to set the student to have falsy values
@@ -54,6 +54,7 @@ const Student = ({ formattedDateOfBirth }) => {
         <p>{`${names.preferredName} ${names.middleName} ${names.surname}`}</p>
         <p>{`${username}`}</p>
         <p>{formattedDateOfBirth(dob)}</p>
+        <p>{onTrackToGraduate(student) ? "On track to Graduate" : " "}</p>
       </div>
 
       <Table student={student} />
