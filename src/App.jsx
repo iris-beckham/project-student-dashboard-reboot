@@ -4,6 +4,7 @@ import About from "./components/About";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Aside } from "./components/Aside";
+import Student from "./components/Student";
 // import { getAllStudents } from "./api/fetch";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />
-          {/* <Route path=":id" element={<Student />} /> */}
+          <Route path=":id" element={<Student />} />
         </Route>
         <Route path="/about" element={<About />}></Route>
       </Routes>
