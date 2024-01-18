@@ -1,12 +1,14 @@
 import { getOneStudent } from "../api/fetch";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Table from "./Table";
 
 const Student = ({ formattedDateOfBirth }) => {
   const { id } = useParams();
 
-  //   console.log(id);
+  //to set the student to have falsy values
   const [student, setStudent] = useState({
+    id: "",
     names: {
       preferredName: "",
       middleName: "",
@@ -15,13 +17,33 @@ const Student = ({ formattedDateOfBirth }) => {
     username: "",
     dob: "",
     profilePhoto: "",
+    codewars: {
+      current: { total: 0, lastWeek: 0 },
+      goal: { total: 0, lastWeek: 0 },
+    },
+    certifications: {
+      resume: false,
+      linkedin: false,
+      github: false,
+      mockInterview: false,
+    },
+    notes: [
+      {
+        commenter: "",
+        comment: "",
+      },
+    ],
+    cohort: {
+      cohortCode: "",
+      cohortStartDate: "",
+      scores: { assignments: 0, projects: 0, assessments: 0 },
+    },
   });
 
   useEffect(() => {
     getOneStudent(id).then((data) => setStudent(data));
   }, []);
 
-  //   console.log(student);
   const { names, username, dob, profilePhoto } = student;
 
   return (
@@ -33,6 +55,8 @@ const Student = ({ formattedDateOfBirth }) => {
         <p>{`${username}`}</p>
         <p>{formattedDateOfBirth(dob)}</p>
       </div>
+
+      <Table student={student} />
     </div>
   );
 };
