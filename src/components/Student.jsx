@@ -1,12 +1,14 @@
 import { getOneStudent } from "../api/fetch";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Table from "./Table";
 
 const Student = ({ formattedDateOfBirth }) => {
   const { id } = useParams();
 
-  //   console.log(id);
+  //to set the student to have falsy values
   const [student, setStudent] = useState({
+    id: "",
     names: {
       preferredName: "",
       middleName: "",
@@ -15,13 +17,33 @@ const Student = ({ formattedDateOfBirth }) => {
     username: "",
     dob: "",
     profilePhoto: "",
+    codewars: {
+      current: { total: 0, lastWeek: 0 },
+      goal: { total: 0, lastWeek: 0 },
+    },
+    certifications: {
+      resume: false,
+      linkedin: false,
+      github: false,
+      mockInterview: false,
+    },
+    notes: [
+      {
+        commenter: "",
+        comment: "",
+      },
+    ],
+    cohort: {
+      cohortCode: "",
+      cohortStartDate: "",
+      scores: { assignments: 0, projects: 0, assessments: 0 },
+    },
   });
 
   useEffect(() => {
     getOneStudent(id).then((data) => setStudent(data));
   }, []);
 
-  //   console.log(student);
   const { names, username, dob, profilePhoto } = student;
 
   return (
@@ -34,36 +56,7 @@ const Student = ({ formattedDateOfBirth }) => {
         <p>{formattedDateOfBirth(dob)}</p>
       </div>
 
-      {/* Remember to put the table in it's own component */}
-      <div>
-        <table>
-          <tr>
-            <th>Codewars</th>
-            <th>Scores</th>
-            <th>Certifications</th>
-          </tr>
-          <tr>
-            <td>Current Total:</td>
-            <td>Assignments:</td>
-            <td>Resume:</td>
-          </tr>
-          <tr>
-            <td>Last Week:</td>
-            <td>Projects:</td>
-            <td>LinkedIn:</td>
-          </tr>
-          <tr>
-            <td>Goal:</td>
-            <td>Assessments:</td>
-            <td>Mock Interview:</td>
-          </tr>
-          <tr>
-            <td>Percent of Goal Achieved:</td>
-            <td></td>
-            <td>Github:</td>
-          </tr>
-        </table>
-      </div>
+      <Table student={student} />
     </div>
   );
 };
