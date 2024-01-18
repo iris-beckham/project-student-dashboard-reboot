@@ -33,6 +33,37 @@ const Student = ({ formattedDateOfBirth }) => {
         <p>{`${username}`}</p>
         <p>{formattedDateOfBirth(dob)}</p>
       </div>
+
+      {/* Remember to put the table in it's own component */}
+      <div>
+        <table>
+          <tr>
+            <th>Codewars</th>
+            <th>Scores</th>
+            <th>Certifications</th>
+          </tr>
+          <tr>
+            <td>Current Total:</td>
+            <td>Assignments:</td>
+            <td>Resume:</td>
+          </tr>
+          <tr>
+            <td>Last Week:</td>
+            <td>Projects:</td>
+            <td>LinkedIn:</td>
+          </tr>
+          <tr>
+            <td>Goal:</td>
+            <td>Assessments:</td>
+            <td>Mock Interview:</td>
+          </tr>
+          <tr>
+            <td>Percent of Goal Achieved:</td>
+            <td></td>
+            <td>Github:</td>
+          </tr>
+        </table>
+      </div>
     </div>
   );
 };
