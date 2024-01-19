@@ -3,9 +3,8 @@ import { getAllStudents } from "../api/fetch";
 // this link will be used to take us to the indivual students information
 import { Link } from "react-router-dom";
 
-export const Home = ({ formattedDateOfBirth }) => {
+export const Home = ({ formattedDateOfBirth, students, setStudents }) => {
   const [onTrack, setOnTrack] = useState(false);
-  const [students, setStudents] = useState([]);
   useEffect(() => {
     getAllStudents().then((data) => setStudents(data));
   }, []);
@@ -21,9 +20,9 @@ export const Home = ({ formattedDateOfBirth }) => {
             <li>
               <h3>
                 {certifications.resume &&
-                certifications.linkedin &&
-                certifications.github &&
-                certifications.mockInterview
+                  certifications.linkedin &&
+                  certifications.github &&
+                  certifications.mockInterview
                   ? "On track to Graduate"
                   : " "}
               </h3>
