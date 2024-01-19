@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+
+import { getAllStudents } from "./api/fetch";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -7,6 +9,7 @@ import About from "./components/About";
 import { Home } from "./components/Home";
 import { Aside } from "./components/Aside";
 import Student from "./components/Student";
+
 import CohortList from "./components/CohortList";
 
 
@@ -14,6 +17,9 @@ import CohortList from "./components/CohortList";
 function App() {
   //students state 
   const [students, setStudents] = useState([]);
+  useEffect(() => {
+    getAllStudents().then((data) => setStudents(data));
+  }, []);
 
   // date function
   const formattedDateOfBirth = (dob) => {
