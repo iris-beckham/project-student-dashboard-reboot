@@ -26,9 +26,12 @@ function App() {
   const handleChange = (e) => {
     const cohortName = e.target.textContent
     setCohort(cohortName);
-    const newFilteredStudents = students.filter(student => student.cohort.cohortCode === cohortName.split(' ').join('')) 
-    setFilteredStudents(newFilteredStudents)
-
+    if (cohortName === 'All Students') {
+      setFilteredStudents(students)
+    } else {
+      const newFilteredStudents = students.filter(student => student.cohort.cohortCode === cohortName.split(' ').join(''))
+      setFilteredStudents(newFilteredStudents)
+    }
   }
 
 
@@ -92,7 +95,7 @@ function App() {
         <Route path="/about" element={<About />}></Route>
       </Routes>
 
-      
+
       <Footer />
     </div>
   );
