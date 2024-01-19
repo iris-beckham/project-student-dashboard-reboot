@@ -10,19 +10,35 @@ import { Home } from "./components/Home";
 import { Aside } from "./components/Aside";
 import Student from "./components/Student";
 
-import CohortList from "./components/CohortList";
 
 
 
 function App() {
   //students state 
   const [students, setStudents] = useState([]);
-  useEffect(() => {
-    getAllStudents().then((data) => setStudents(data));
-  }, []);
+
+  // filtered students state
+  const [filteredStudents, setFilteredStudents] = useState([])
 
   //state for cohort name
   const [cohort, setCohort] = useState('All Students');
+
+  const handleChange = (e) => {
+    const cohortName = e.target.textContent
+    setCohort(cohortName);
+    const newFilteredStudents = students.filter(student => student.cohort.cohortCode === cohortName.split(' ').join('')) 
+    setFilteredStudents(newFilteredStudents)
+
+  }
+
+
+  useEffect(() => {
+    getAllStudents().then((data) => {
+      setStudents(data)
+      setFilteredStudents(data)
+    });
+  }, []);
+
 
   // date function
   const formattedDateOfBirth = (dob) => {
@@ -49,6 +65,7 @@ function App() {
   return (
     <div>
       <Header />
+      <Aside handleChange={handleChange} />
       <Routes>
         <Route path="/">
           <Route
@@ -57,8 +74,8 @@ function App() {
               <Home
                 onTrackToGraduate={onTrackToGraduate}
                 formattedDateOfBirth={formattedDateOfBirth}
-                students={students}
-                setStudents={setStudents}
+                filteredStudents={filteredStudents}
+                cohort={cohort}
               />
             }
           />
@@ -73,11 +90,9 @@ function App() {
           />
         </Route>
         <Route path="/about" element={<About />}></Route>
-        <Route path="/cohort" element={<CohortList />}>
-        </Route>
       </Routes>
 
-      <Aside students={students} cohort={cohort} setCohort={setCohort} />
+      
       <Footer />
     </div>
   );
