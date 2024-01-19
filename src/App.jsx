@@ -9,23 +9,6 @@ import Student from "./components/Student";
 
 function App() {
   // date function
-  // const formattedDateOfBirth = (dob) => {
-  //   // Parse the date string
-  //   const dobArray = dob.split("/");
-  //   const month = parseInt(dobArray[0], 10);
-  //   const day = parseInt(dobArray[1], 10);
-  //   const year = parseInt(dobArray[2], 10);
-
-  //   // Create a Date object
-  //   const formattedDate = new Date(year, month - 1, day);
-
-  //   // Format the date to "Month day, Year"
-  //   const options = { month: "long", day: "numeric", year: "numeric" };
-  //   const result = formattedDate.toLocaleDateString("en-US", options);
-  //   return result;
-  // };
-
-  // refactor formattedDOB
   const formattedDateOfBirth = (dob) => {
     // Create a new Date object by parsing the input date of birth (dob)
     const newDob = new Date(dob);
