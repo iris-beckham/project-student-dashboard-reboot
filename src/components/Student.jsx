@@ -2,6 +2,7 @@ import { getOneStudent } from "../api/fetch";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Table from "./Table";
+import CommentForm from './CommentForm';
 
 const Student = ({ formattedDateOfBirth, onTrackToGraduate }) => {
   const { id } = useParams();
@@ -58,6 +59,7 @@ const Student = ({ formattedDateOfBirth, onTrackToGraduate }) => {
       </div>
 
       <Table student={student} />
+      <CommentForm />
     </div>
   );
 };
