@@ -45,6 +45,9 @@ const Student = ({ formattedDateOfBirth, onTrackToGraduate }) => {
     getOneStudent(id).then((data) => setStudent(data));
   }, []);
 
+  //comments state 
+  const [comments, setComments] = useState([]);
+
   const { names, username, dob, profilePhoto } = student;
 
   return (
@@ -59,7 +62,10 @@ const Student = ({ formattedDateOfBirth, onTrackToGraduate }) => {
       </div>
 
       <Table student={student} />
-      <CommentForm />
+      <div>
+        <h2>1 on 1 notes</h2>
+        <CommentForm comments={comments} setComments={setComments} />
+      </div>
     </div>
   );
 };
