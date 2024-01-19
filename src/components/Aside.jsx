@@ -1,23 +1,41 @@
+import { Link } from "react-router-dom"
 
-export const Aside = ({ students }) => {
+export const Aside = ({ students, cohort, setCohort }) => {
   const handleChange = (e) => {
-    console.log(e.target.value)
-    console.log(students)
+    //clear the page??
+    setCohort(e.target.textContent);
   }
   return (
     <>
       <h2>Choose A Class By Start Date</h2>
       <button>Sort Descending By Year</button>
       <ul>
-        <li>All Students</li>
-        <li value='Winter2025' onClick={handleChange}>Winter 2025</li>
-        <li>Spring 2025</li>
-        <li>Summer 2025</li>
-        <li>Fall 2025</li>
-        <li>Winter 2026</li>
-        <li>Spring 2026</li>
-        <li>Summer 2026</li>
-        <li>Fall 2026</li>
+        <Link to='/'><li>All Students</li></Link>
+        <Link to='/cohort'>
+          <li onClick={handleChange}>Winter 2025</li>
+        </Link>
+        <Link to='/cohort'>
+          <li>Spring 2025</li>
+        </Link>
+        <Link to='/cohort'>
+          <li onClick={handleChange}>Summer 2025</li>
+        </Link>
+        <Link to='/cohort'>
+          <li onClick={handleChange}>Fall 2025</li>
+        </Link>
+        <Link to='/cohort'>
+          <li onClick={handleChange}>Winter 2026</li>
+        </Link>
+        <Link to='/cohort'>
+          <li onClick={handleChange}>Spring 2026</li>
+        </Link>
+        <Link to='/cohort'>
+          <li onClick={handleChange}>Summer 2026</li>
+        </Link>
+        <Link to='/cohort'>
+          <li onClick={handleChange}>Fall 2026</li>
+        </Link>
+
       </ul>
     </>
   )
