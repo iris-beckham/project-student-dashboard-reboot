@@ -61,7 +61,7 @@ function App() {
   // on track to graduate fx
   const onTrackToGraduate = (student) => {
     const { resume, linkedin, mockInterview, github } = student.certifications;
-    if (resume && linkedin && mockInterview && github) {
+    if (resume && linkedin && mockInterview && github && student.codewars.current.total >= 850) {
       return true;
     }
   };
