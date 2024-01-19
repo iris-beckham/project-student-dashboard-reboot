@@ -1,13 +1,26 @@
+import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+
+import { getAllStudents } from "./api/fetch";
+
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import About from "./components/About";
-import { Routes, Route } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Aside } from "./components/Aside";
 import Student from "./components/Student";
-// import { getAllStudents } from "./api/fetch";
+
+import CohortList from "./components/CohortList";
+
+
 
 function App() {
+  //students state 
+  const [students, setStudents] = useState([]);
+  useEffect(() => {
+    getAllStudents().then((data) => setStudents(data));
+  }, []);
+
   // date function
   const formattedDateOfBirth = (dob) => {
     // Create a new Date object by parsing the input date of birth (dob)
@@ -41,6 +54,8 @@ function App() {
               <Home
                 onTrackToGraduate={onTrackToGraduate}
                 formattedDateOfBirth={formattedDateOfBirth}
+                students={students}
+                setStudents={setStudents}
               />
             }
           />
@@ -56,7 +71,7 @@ function App() {
         </Route>
         <Route path="/about" element={<About />}></Route>
       </Routes>
-      <Aside />
+      <Aside students={students} />
       <Footer />
     </div>
   );
