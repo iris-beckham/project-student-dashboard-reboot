@@ -10,7 +10,6 @@ import { Home } from "./components/Home";
 import { Aside } from "./components/Aside";
 import Student from "./components/Student";
 
-import CohortList from "./components/CohortList";
 
 
 
