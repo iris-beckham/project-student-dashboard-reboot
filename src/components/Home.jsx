@@ -1,12 +1,12 @@
 // this link will be used to take us to the indivual students information
 import { Link } from "react-router-dom";
 
-export const Home = ({ formattedDateOfBirth, students }) => {
+export const Home = ({ formattedDateOfBirth, filteredStudents, cohort }) => {
   return (
     <div>
-      <h1>All Students</h1>
-      <h2>Total Students: {students.length}</h2>
-      {students.map(
+      <h1>{cohort.split(' ').join(" ")}</h1>
+      <h2>Total Students: {filteredStudents.length}</h2>
+      {filteredStudents.map(
         ({ id, names, username, dob, profilePhoto, certifications }) => (
           // this makes it where whenever we click the student it takes us to their page based on their id
           <Link key={id} to={`/${id}`}>
