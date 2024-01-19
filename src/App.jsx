@@ -21,6 +21,9 @@ function App() {
     getAllStudents().then((data) => setStudents(data));
   }, []);
 
+  //state for cohort name
+  const [cohort, setCohort] = useState('All Students');
+
   // date function
   const formattedDateOfBirth = (dob) => {
     // Create a new Date object by parsing the input date of birth (dob)
@@ -70,8 +73,11 @@ function App() {
           />
         </Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/cohort" element={<CohortList />}>
+        </Route>
       </Routes>
-      <Aside students={students} />
+
+      <Aside students={students} cohort={cohort} setCohort={setCohort} />
       <Footer />
     </div>
   );
