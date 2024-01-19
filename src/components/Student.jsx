@@ -2,6 +2,8 @@ import { getOneStudent } from "../api/fetch";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Table from "./Table";
+import CommentForm from './CommentForm';
+import Comments from "./Comments";
 
 const Student = ({ formattedDateOfBirth, onTrackToGraduate }) => {
   const { id } = useParams();
@@ -44,6 +46,9 @@ const Student = ({ formattedDateOfBirth, onTrackToGraduate }) => {
     getOneStudent(id).then((data) => setStudent(data));
   }, []);
 
+  //comments state 
+  const [comments, setComments] = useState([]);
+
   const { names, username, dob, profilePhoto } = student;
 
   return (
@@ -58,6 +63,11 @@ const Student = ({ formattedDateOfBirth, onTrackToGraduate }) => {
       </div>
 
       <Table student={student} />
+      <div>
+        <h2>1 on 1 notes</h2>
+        <CommentForm comments={comments} setComments={setComments} />
+        <Comments comments={comments} />
+      </div>
     </div>
   );
 };
