@@ -38,6 +38,7 @@ const CommentForm = ({ studentId, comments, setComments }) => {
         value={author}
         name="author"
         id="author"
+        required
       />
       <br />
       <br />
@@ -49,6 +50,7 @@ const CommentForm = ({ studentId, comments, setComments }) => {
         value={comment}
         name="comment"
         id="comment"
+        required
       />
       <br />
       <br />
