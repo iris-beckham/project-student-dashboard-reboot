@@ -2,7 +2,7 @@ const Comments = ({ comments }) => {
   return (
     <div>
       <h3>Comments</h3>
-      <ul>
+      <ul className="container">
         {comments.map((comment) => {
           return (
             <li key={comment.comment}>
