@@ -26,22 +26,24 @@ const CommentForm = ({ comments, setComments }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="author">
-        <input
-          onChange={handleAuthor}
-          type="text"
-          placeholder="author"
-          value={author}
-        />
-      </label>
-      <label htmlFor="comment">
-        <textarea
-          onChange={handleComment}
-          type="text"
-          placeholder="comment"
-          value={comment}
-        />
-      </label>
+      <input
+        onChange={handleAuthor}
+        type="text"
+        placeholder="author"
+        value={author}
+        name="author"
+        id="author"
+      />
+      <label htmlFor="author">Author</label>
+      <input
+        onChange={handleComment}
+        type="text"
+        placeholder="comment"
+        value={comment}
+        name="comment"
+        id="comment"
+      />
+      <label htmlFor="comment">Comment</label>
       <button type="submit">Submit</button>
     </form>
   );
