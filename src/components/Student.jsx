@@ -47,7 +47,11 @@ const Student = ({ formattedDateOfBirth, onTrackToGraduate }) => {
   }, []);
 
   //comments state
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState(() => {
+    const localValue = localStorage.getItem(`ITEMS_${id}`);
+    if (localValue == null) return [];
+    return JSON.parse(localValue);
+  });
 
   const { names, username, dob, profilePhoto } = student;
 
@@ -65,8 +69,12 @@ const Student = ({ formattedDateOfBirth, onTrackToGraduate }) => {
       <Table student={student} />
       <div style={{ border: "2px solid black" }}>
         <h2>1 on 1 notes</h2>
-        <CommentForm comments={comments} setComments={setComments} />
-        <Comments comments={comments} />
+        <CommentForm
+          studentId={id}
+          comments={comments}
+          setComments={setComments}
+        />
+        <Comments studentId={id} comments={comments} />
       </div>
     </div>
   );

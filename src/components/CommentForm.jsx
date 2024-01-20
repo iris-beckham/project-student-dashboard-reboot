@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const CommentForm = ({ comments, setComments }) => {
+const CommentForm = ({ studentId, comments, setComments }) => {
   const [comment, setComment] = useState("");
   const [author, setAuthor] = useState("");
 
@@ -20,9 +20,13 @@ const CommentForm = ({ comments, setComments }) => {
     const newCommentArray = [...comments];
     newCommentArray.push({ author: author, comment: comment });
     setComments([...newCommentArray]);
+
     setComment("");
     setAuthor("");
   };
+  useEffect(() => {
+    localStorage.setItem(`ITEMS_${studentId}`, JSON.stringify(comments));
+  }, [comments, studentId]);
 
   return (
     <form style={{ border: "2px solid black" }} onSubmit={handleSubmit}>
