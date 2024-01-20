@@ -74,7 +74,7 @@ const Student = ({ formattedDateOfBirth, onTrackToGraduate }) => {
           comments={comments}
           setComments={setComments}
         />
-        <Comments studentId={id} comments={comments} />
+        <Comments student={student} comments={comments} />
       </div>
     </div>
   );
