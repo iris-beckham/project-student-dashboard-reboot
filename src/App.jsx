@@ -10,38 +10,36 @@ import { Home } from "./components/Home";
 import { Aside } from "./components/Aside";
 import Student from "./components/Student";
 
-
-
-
 function App() {
-  //students state 
+  //students state
   const [students, setStudents] = useState([]);
 
   // filtered students state
-  const [filteredStudents, setFilteredStudents] = useState([])
+  const [filteredStudents, setFilteredStudents] = useState([]);
 
   //state for cohort name
-  const [cohort, setCohort] = useState('All Students');
+  const [cohort, setCohort] = useState("All Students");
 
   const handleChange = (e) => {
-    const cohortName = e.target.textContent
+    const cohortName = e.target.textContent;
     setCohort(cohortName);
-    if (cohortName === 'All Students') {
-      setFilteredStudents(students)
+    if (cohortName === "All Students") {
+      setFilteredStudents(students);
     } else {
-      const newFilteredStudents = students.filter(student => student.cohort.cohortCode === cohortName.split(' ').join(''))
-      setFilteredStudents(newFilteredStudents)
+      const newFilteredStudents = students.filter(
+        (student) =>
+          student.cohort.cohortCode === cohortName.split(" ").join("")
+      );
+      setFilteredStudents(newFilteredStudents);
     }
-  }
-
+  };
 
   useEffect(() => {
     getAllStudents().then((data) => {
-      setStudents(data)
-      setFilteredStudents(data)
+      setStudents(data);
+      setFilteredStudents(data);
     });
   }, []);
-
 
   // date function
   const formattedDateOfBirth = (dob) => {
@@ -61,7 +59,13 @@ function App() {
   // on track to graduate fx
   const onTrackToGraduate = (student) => {
     const { resume, linkedin, mockInterview, github } = student.certifications;
-    if (resume && linkedin && mockInterview && github && student.codewars.current.total >= 850) {
+    if (
+      resume &&
+      linkedin &&
+      mockInterview &&
+      github &&
+      student.codewars.current.total >= 850
+    ) {
       return true;
     }
   };
@@ -69,6 +73,7 @@ function App() {
     <div>
       <Header />
       <Aside handleChange={handleChange} />
+
       <Routes>
         <Route path="/">
           <Route
@@ -82,6 +87,7 @@ function App() {
               />
             }
           />
+
           <Route
             path=":id"
             element={
@@ -92,9 +98,9 @@ function App() {
             }
           />
         </Route>
+
         <Route path="/about" element={<About />}></Route>
       </Routes>
-
 
       <Footer />
     </div>
