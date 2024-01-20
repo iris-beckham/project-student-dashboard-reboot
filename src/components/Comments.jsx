@@ -1,4 +1,4 @@
-const Comments = ({ comments }) => {
+const Comments = ({ studentId, comments }) => {
   return (
     <div>
       <h3>Comments</h3>
