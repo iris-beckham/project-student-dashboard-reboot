@@ -25,7 +25,8 @@ const CommentForm = ({ comments, setComments }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form style={{ border: "2px solid black" }} onSubmit={handleSubmit}>
+      <label htmlFor="author">Author</label>
       <input
         onChange={handleAuthor}
         type="text"
@@ -34,7 +35,9 @@ const CommentForm = ({ comments, setComments }) => {
         name="author"
         id="author"
       />
-      <label htmlFor="author">Author</label>
+      <br />
+      <br />
+      <label htmlFor="comment">Comment</label>
       <input
         onChange={handleComment}
         type="text"
@@ -43,7 +46,9 @@ const CommentForm = ({ comments, setComments }) => {
         name="comment"
         id="comment"
       />
-      <label htmlFor="comment">Comment</label>
+      <br />
+      <br />
+
       <button type="submit">Submit</button>
     </form>
   );
