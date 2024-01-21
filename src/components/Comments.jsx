@@ -3,9 +3,9 @@ const Comments = ({ studentId, comments }) => {
     <div>
       <h3>Comments</h3>
       <ul className="container">
-        {comments.map((comment) => {
+        {comments.map((comment, index) => {
           return (
-            <li key={comment.comment}>
+            <li key={index}>
               {comment.author} says: {comment.comment}
             </li>
           );
