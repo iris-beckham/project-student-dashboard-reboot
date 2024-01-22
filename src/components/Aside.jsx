@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import "./Aside.css"
 
 
 export const Aside = ({ handleChange }) => {
@@ -20,7 +21,7 @@ export const Aside = ({ handleChange }) => {
       <ul>
         {cohortArr.map(elem => {
           return (
-            <Link key={elem} to='/'>
+            <Link className="cohorts" key={elem} to='/'>
               <li onClick={handleChange}>{elem}</li>
             </Link>)
         })}
