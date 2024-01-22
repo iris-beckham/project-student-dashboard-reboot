@@ -2,7 +2,7 @@ const Jennifer = () => {
   return (
     <div>
       <img
-        src="https://xsgames.co/randomusers/avatar.php?g=male&minimum_age=38&maximum_age=48"
+        src="https://xsgames.co/randomusers/avatar.php?g=female&minimum_age=38&maximum_age=48"
         alt="photo of Jennifer Peterson"
       />
       <p>
