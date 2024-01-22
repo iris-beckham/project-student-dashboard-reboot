@@ -1,0 +1,32 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-left: 40px;
+    margin-top: 20px;
+    padding-right: 1050px;
+    list-style-type: none;
+    text-decoration: none;
+}
+button {
+    margin-left: 120px;
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+}
+h2 {
+    margin-left: 60px;
+    margin-top: 60px;
+}
+.cohorts {
+    border-bottom: 1px solid grey;
+    padding-bottom: 9px;
+    color: black;
+    text-decoration: none;
+}

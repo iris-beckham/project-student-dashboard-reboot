@@ -1,0 +1,66 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+
+.cohort {
+   margin-top: -490px;
+   margin-left: 468px;
+   font-size: 40px;
+}
+
+.student-num {
+    margin-top: -20px;
+    margin-left: 470px;
+}
+
+.main {
+    margin-left: 470px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    width: 900px;
+    list-style-type: none;
+    margin-top: 20px;
+}
+.main li {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    align-items: center; 
+    text-align: center; 
+}
+
+.main img {
+    margin-top: 20px;
+    border-radius: 50%;
+    width: 50%; 
+}
+
+.main h2 {
+    margin: 0;
+    margin-top: 19px;
+    width: 100%;
+    color: black;
+}
+.main h3 {
+    color: green;
+    position: absolute;
+    margin-top: 355px;
+    margin-left: 0px;
+}
+.main p {
+    margin-top: 15px;
+    color: black;
+}
+
+.main button {
+    width: 50%;
+    padding: 10px;
+    margin: 0;
+    margin-top: 40px;
+}

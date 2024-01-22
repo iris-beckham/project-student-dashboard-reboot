@@ -1,0 +1,58 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+textarea {
+    margin-top: 20px;
+    width:98%;
+    color: white;
+}
+
+.comment-form {
+    margin-top: 30px;
+    position: absolute;
+    margin-left: 30px;
+    align-items: center;
+    padding-right: 200px; 
+    padding-left: 200px;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+.comment-form input{
+    color: white;
+}
+.comment-form button{
+    margin-top: 9px;
+    margin-left: 34px;
+    width: 20%;
+    height: 10%;
+    position: absolute;
+}
+.comment-form span{
+    margin-top: -8px;
+    margin-left: -23px;
+    position: absolute;
+}
+.author {
+    width: 87%;
+    background: black;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+    margin-left: -10px;
+}
+.author::placeholder {
+    color: white;
+    padding: 10px;
+}
+.comment {
+    background: black;
+    width: 92%;
+    border-radius: 10px;
+    padding: 15px;
+    margin-left: -10px;
+}
+.comment::placeholder {
+    color: white;
+    padding: 8px;
+}
