@@ -1,0 +1,19 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.headerOne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: green;
+    margin-top: 0px;
+}
+
+.headerOne :any-link {
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+}
