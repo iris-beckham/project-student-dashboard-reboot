@@ -3,7 +3,7 @@
     padding: 0px;
 }
 
-ul {
+.aside-ul {
     display: flex;
     flex-direction: column;
     row-gap: 10px;

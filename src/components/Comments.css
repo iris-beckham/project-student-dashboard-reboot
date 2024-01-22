@@ -10,6 +10,13 @@ h3 {
     color: white;
 }
 
+.current-notes ul {
+    height: 200px;
+    
+}
+
+
+
 .current-notes li {   
     margin-left: 25px;
     margin-top: 340px;
@@ -19,6 +26,6 @@ h3 {
     font-size: 30px;
     background: black;
     margin-bottom: -340px;
-
+    list-style-type: none;
 }
 

@@ -18,7 +18,7 @@ export const Aside = ({ handleChange }) => {
     <>
       <h2>Choose A Class By Start Date</h2>
       <button onClick={() => setSortingDirection(!sortingDirection)}>Sort {sortingDirection ? 'Descending' : 'Ascending'} By Year</button>
-      <ul>
+      <ul className="aside-ul">
         {cohortArr.map(elem => {
           return (
             <Link className="cohorts" key={elem} to='/'>
