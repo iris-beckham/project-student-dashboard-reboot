@@ -1,0 +1,15 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: aqua;
+  width: 100vw;
+  text-align: center;
+}
+
+/* hover
+get rid of underline
+maybe make it bigger
+change the font?
+change the color of the background?
+ */
