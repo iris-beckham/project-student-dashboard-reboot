@@ -1,7 +1,8 @@
 const Comments = ({ studentId, comments }) => {
+  console.log(comments.length);
   return (
     <div>
-      <h3>Comments</h3>
+      <h3>{comments.length} Comments</h3>
       <ul className="container">
         {comments.map((comment, index) => {
           return (
