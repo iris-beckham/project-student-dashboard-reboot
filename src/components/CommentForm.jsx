@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./CommentForm.css"
 
 const CommentForm = ({ studentId, comments, setComments }) => {
   const [comment, setComment] = useState("");
@@ -20,7 +21,7 @@ const CommentForm = ({ studentId, comments, setComments }) => {
     const newCommentArray = [...comments];
     newCommentArray.push({ author: author, comment: comment });
     setComments([...newCommentArray]);
-
+    
     setComment("");
     setAuthor("");
   };
@@ -29,9 +30,10 @@ const CommentForm = ({ studentId, comments, setComments }) => {
   }, [comments, studentId]);
 
   return (
-    <form style={{ border: "2px solid black" }} onSubmit={handleSubmit}>
-      <label htmlFor="author">Author</label>
+    <form className="comment-form" onSubmit={handleSubmit}>
+      {/* <label className="author-tag" htmlFor="author">Author </label> */}
       <input
+        className="author"
         onChange={handleAuthor}
         type="text"
         placeholder="author"
@@ -41,9 +43,9 @@ const CommentForm = ({ studentId, comments, setComments }) => {
         required
       />
       <br />
-      <br />
-      <label htmlFor="comment">Comment</label>
-      <input
+      {/* <label className="comment-tag"htmlFor="comment">Comment</label> */}
+      <textarea
+        className="comment"
         onChange={handleComment}
         type="text"
         placeholder="comment"
@@ -53,9 +55,7 @@ const CommentForm = ({ studentId, comments, setComments }) => {
         required
       />
       <br />
-      <br />
-
-      <button type="submit">Submit</button>
+      <button type="submit"><span>Submit</span></button>
     </form>
   );
 };

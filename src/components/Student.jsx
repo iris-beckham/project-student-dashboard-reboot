@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Table from "./Table";
 import CommentForm from "./CommentForm";
 import Comments from "./Comments";
+import "./Student.css"
 
 const Student = ({ formattedDateOfBirth, onTrackToGraduate }) => {
   const { id } = useParams();
@@ -54,27 +55,30 @@ const Student = ({ formattedDateOfBirth, onTrackToGraduate }) => {
   });
 
   const { names, username, dob, profilePhoto } = student;
+  
 
   return (
-    <div>
+    <div className="container">
+      <div className="main-content">
       <img src={profilePhoto} alt={`${names.preferredName}`} />
 
-      <div>
-        <p>{`${names.preferredName} ${names.middleName} ${names.surname}`}</p>
-        <p>{`${username}`}</p>
-        <p>{formattedDateOfBirth(dob)}</p>
-        <p>{onTrackToGraduate(student) ? "On track to Graduate" : " "}</p>
+        <p className="name">{`${names.preferredName} ${names.middleName} ${names.surname}`}</p>
+        <p className="email">{`${username}`}</p>
+        <p className="dob">Birthday: {formattedDateOfBirth(dob)}</p>
+        <p className="on-track">{onTrackToGraduate(student) ? "On track to Graduate" : " "}</p>
       </div>
 
       <Table student={student} />
-      <div style={{ border: "2px solid black" }}>
-        <h2>1 on 1 notes</h2>
+      <div className="notes">
+        <h2>1 : 1 notes</h2>
         <CommentForm
           studentId={id}
           comments={comments}
           setComments={setComments}
         />
+        <div className="comments">
         <Comments student={student} comments={comments} />
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import "./Table.css"
 
 const Table = ({ student }) => {
   const { codewars, certifications, cohort } = student;
@@ -18,17 +18,17 @@ const Table = ({ student }) => {
           <tr>
             <td>Current Total: {current.total}</td>
             <td>Assignments: {assignments * 100}% </td>
-            <td>Resume: {resume ? "🟢" : "🔴"} </td>
+            <td>Resume: {resume ? '👍' : "👎🏽"} </td>
           </tr>
           <tr>
             <td>Last Week: {current.lastWeek}</td>
             <td>Projects: {projects * 100}% </td>
-            <td>LinkedIn: {linkedin ? "🟢" : "🔴"}</td>
+            <td>LinkedIn: {linkedin ? "👍" : "👎🏽"}</td>
           </tr>
           <tr>
             <td>Goal: {goal.total}</td>
             <td>Assessments: {assessments * 100}% </td>
-            <td>Mock Interview: {mockInterview ? "🟢" : "🔴"}</td>
+            <td>Mock Interview: {mockInterview ? "👍" : "👎🏽"}</td>
           </tr>
           <tr>
             <td>
@@ -36,7 +36,7 @@ const Table = ({ student }) => {
               {Math.floor((current.total / goal.total) * 100)}%
             </td>
             <td></td>
-            <td>Github: {github ? "🟢" : "🔴"}</td>
+            <td>Github: {github ? "👍" : "👎🏽"}</td>
           </tr>
         </tbody>
       </table>
