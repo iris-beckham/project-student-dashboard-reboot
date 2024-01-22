@@ -1,4 +1,4 @@
-// import "./Jennifer.css";
+import "./Jennifer.css";
 
 const Jennifer = () => {
   return (
