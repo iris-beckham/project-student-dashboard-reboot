@@ -3,16 +3,10 @@ import "./Jennifer.css";
 const Jennifer = () => {
   return (
     <div className="jennifer">
-      <h2 className="rainbow-text">Jennifer Peterson</h2>
+      <h2>Jennifer Peterson</h2>
 
-      <div className="container">
-        <div className="image-container">
-          <img
-            src="images/Jennifer.jpg"
-            alt="Girl in a jacket"
-            style={{ width: "100%", height: "auto", display: "block" }}
-          />
-        </div>
+      <div>
+        <img src="https://xsgames.co/randomusers/avatar.php?g=male&minimum_age=38&maximum_age=48" />
         <p>
           Fun fact: I ❤️ to <span>TRAVEL</span>✈️, trying new <span>FOODS</span>{" "}
           🍣 and I am currently teaching myself to <span>COOK 👩🏿‍🍳</span>{" "}
