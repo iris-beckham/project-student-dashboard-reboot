@@ -9,7 +9,8 @@
     row-gap: 10px;
     margin-left: 40px;
     margin-top: 20px;
-    padding-right: 1050px;
+    width: 250px;
+    /* padding-right: 1050px; */
     list-style-type: none;
     text-decoration: none;
 }

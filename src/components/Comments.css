@@ -4,28 +4,27 @@
 }
 
 h3 {
-    position: absolute;
-    margin-top: 250px;
+    margin-top: -25px;
     margin-left: 280px;
     color: white;
 }
 
-.current-notes ul {
-    height: 200px;
-    
+.all-notes {
+    height: 180px;
+    overflow-y: scroll;
 }
 
 
 
-.current-notes li {   
-    margin-left: 25px;
-    margin-top: 340px;
+.all-notes li {   
+    margin-left: 79px;
+    margin-top: 34px;
     text-align: center;
-    width: 530px;
+    width: 500px;
     color: white;
-    font-size: 30px;
+    font-size: 22px;
     background: black;
-    margin-bottom: -340px;
+    margin-bottom: 40px;
     list-style-type: none;
 }
 
