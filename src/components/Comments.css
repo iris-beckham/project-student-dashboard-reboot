@@ -1,0 +1,24 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+h3 {
+    position: absolute;
+    margin-top: 250px;
+    margin-left: 280px;
+    color: white;
+}
+
+.current-notes li {   
+    margin-left: 25px;
+    margin-top: 340px;
+    text-align: center;
+    width: 530px;
+    color: white;
+    font-size: 30px;
+    background: black;
+    margin-bottom: -340px;
+
+}
+
