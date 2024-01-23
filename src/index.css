@@ -10,3 +10,362 @@ footer {
 .about-devs {
     color: white;
 }
+
+
+/* Home view media queries (1440px-1057px)*/
+@media (max-width: 1422px) {
+    .main {
+        width: 61%;
+    }
+    .main h3 {
+        margin-top: 16%; 
+    }
+}
+
+@media (max-width: 1353px) {
+    .main {
+        width: 59%;
+    }
+    .main h3 {
+        margin-top: 15.7%; 
+    }
+    .main p {
+        margin-top: 2px;
+    }
+}
+
+@media (max-width: 1275px) {
+    .main {
+        width: 56%;
+    }
+    .main h3 {
+        margin-top: 15%; 
+    }
+    
+}
+
+@media (max-width: 1162px) {
+    .main {
+        width: 54%;
+    }
+    .main h3 {
+        margin-top: 14.7%; 
+    }
+}
+
+@media (max-width: 1102px) {
+    .main {
+        width: 51%;
+    }
+    .main h3 {
+        margin-top: 14%;
+    }
+    
+}
+
+@media (max-width: 1057px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+    }
+    .main h3 {
+        margin-top: 22%;
+    }
+    
+}
+
+/* Student view media queries (1440px-1060px) */
+
+@media (max-width: 1400px) {
+    .container {
+        width: 65%;
+        margin-left: 450px;
+    }
+    .notes {
+        margin-left: 260px;
+        width: 68%;
+    }
+    .notes-container {
+        margin-left: -110px;
+    }
+    .notes-container h3{
+        margin-left: 390px;
+        margin-top: -10px;
+        padding-bottom: 10px;
+    }
+    .all-notes {
+        margin-left: -40px;
+    }
+    .all-notes li {
+        width: 58%;
+        margin-left: 250px;
+    }
+    .comment-form {
+        margin-left: 15px;
+    }
+
+    .comment-form button {
+        margin-left: 80px;
+    }
+
+}
+@media (max-width: 1360px) {
+    .container {
+        width: 68%;
+        margin-left: 420px;
+    }
+    .notes {
+        margin-left: 260px;
+        width: 68%;
+    }
+    .comment-form {
+        margin-left: -10px;
+    }
+    .notes-container h3 {
+        margin-left: 360px;
+    }
+    .all-notes li {
+        width: 56%;
+        margin-left: 240px;
+    }
+}
+
+@media (max-width: 1320px) {
+    .container {
+        width: 66%;
+        margin-left: 420px;
+    }
+    table {
+        width: 64%;
+    }
+    .notes {
+        margin-left: 260px;
+        width: 64%;
+    }
+
+    .notes-container h3 {
+        margin-left: 330px;
+    }
+    .comment-form {
+        margin-left: -40px;
+    }
+    .all-notes li {
+        width: 54%;
+        margin-left: 230px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .container {
+        width: 64%;
+        margin-left: 412px;
+    }
+    table {
+        width: 62%;
+    }
+    .notes {
+        margin-left: 260px;
+        width: 62%;
+    }
+    .notes-container h3 {
+        margin-left: 300px;
+    }
+    .comment-form {
+        margin-left: -60px;
+    }
+    .all-notes li {
+        width: 52%;
+        margin-left: 230px;
+    }
+}
+
+@media (max-width: 1240px) {
+    .container {
+        width: 62%;
+        margin-left: 420px;
+    }
+    /* table {
+        width: 58%;
+    } */
+    .notes {
+        margin-left: 260px;
+        width: 62%;
+    }
+    .comment-form {
+        margin-left: -65px;
+        margin-top: 10px;
+    }
+    .notes-container h3 {
+        margin-left: 300px;
+        margin-top: -35px;
+    }
+    .all-notes li {
+        width: 50%;
+        margin-left: 230px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        width: 60%;
+        margin-left: 420px;
+    }
+    table {
+        width: 58%;
+    }
+    .notes {
+        margin-left: 260px;
+        width: 60%;
+    }
+    .notes-container h3 {
+        margin-left: 280px;
+    }
+    .comment-form {
+        margin-left: -90px;
+    }
+    .author {
+        height: 1px;
+    } 
+    .comment {
+        height: 10px;
+    } 
+    .all-notes {
+        height: 100px;
+    }
+    .all-notes li {
+        width: 48%;
+        margin-left: 235px;
+    }
+}
+@media (max-width: 1151px) {
+    .container {
+        width: 60%;
+        margin-left: 420px;
+    }
+    .notes {
+        margin-left: 260px;
+        width: 60%;
+    }
+    .notes-container h3 {
+        margin-left: 270px;
+    }
+    .comment-form {
+        margin-left: -100px;
+    }
+    .author {
+        width: 140%;
+        margin-left: 10px;
+    }
+    .comment {
+        width: 150%;
+        margin-left: 10px;
+    }
+    .all-notes li {
+        /* width: 49%; */
+        margin-left: 227px;
+    }
+    .aside-ul {
+        width: 30%;
+    }
+}
+@media (max-width: 1119px) {
+    .container {
+        width: 60%;
+        margin-left: 400px;
+    }
+    table {
+        width: 55%;
+        margin-top: -180px;
+    }
+    td, th {
+        padding: 4px;
+    }
+    .name, .email, .dob, .on-track{
+        padding: 0px;
+    }
+    .main-content img {
+        height: 100px;
+        width: 100px;
+    }
+    .comment-form button {
+        margin-left: 35px;
+    }
+    .notes {
+        margin-left: 259px;
+        width: 55%;
+    }
+    .notes-container h3 {
+        margin-left: 240px;
+    }
+    .comment-form {
+        margin-left: -80px;
+    }
+    .author {
+        width: 135%;
+        margin-left: 10px;
+    }
+    .comment {
+        width: 155%;
+        margin-left: 10px;
+    }
+    .all-notes {
+        height: 160px;
+    }
+    .all-notes li {
+        width: 45%;
+        margin-left: 220px;
+    }
+    .aside-ul {
+        width: 30%;
+    }
+}
+@media (max-width: 1060px) {
+    .container {
+        width: 59%;
+        margin-left: 400px;
+    }
+    table {
+        width: 55%;
+        margin-top: -190px;
+    }
+    td, th {
+        padding: 3px;
+    }
+    .comment-form button {
+        margin-left: 110px;
+    }
+    .name, .email, .dob, .on-track{
+        padding: 2px;
+    }
+    .main-content img {
+        height: 100px;
+        width: 100px;
+    }
+    .notes {
+        margin-left: 100px;
+        width: 75%;
+    }
+    .notes-container h3 {
+        margin-left: 296px;
+    }
+    .comment-form {
+        margin-left: -100px;
+    }
+    .author {
+        width: 73%;
+        margin-left: 50px;
+    }
+    .comment {
+        width: 80%;
+        margin-left: 50px;
+    }
+    .all-notes li {
+        width: 52%;
+        margin-left: 226px;
+    }
+    .aside-ul {
+        width: 30%;
+    }
+}

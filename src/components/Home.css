@@ -26,45 +26,17 @@
   margin-top: 20px;
 }
 
-li.Winter2025 {
-  border: 2px solid purple; /* Example color for Winter 2025 cohort */
-}
-li.Spring2025 {
-  border: 2px solid red; /* Example color for Winter 2025 cohort */
-}
-
-li.Summer2025 {
-  border: 2px solid blue; /* Example color for Summer 2025 cohort */
-}
-
-li.Fall2025 {
-  border: 2px solid orange; /* Example color for Fall 2025 cohort */
-}
-li.Winter2026 {
-  border: 2px solid hotpink; /* Example color for Winter 2025 cohort */
-}
-li.Spring2026 {
-  border: 2px solid fuchsia; /* Example color for Winter 2025 cohort */
-}
-
-.Summer2026 {
-  border: 2px solid grey; /* Example color for Summer 2025 cohort */
-}
-
-.Fall2026 {
-  border: 2px solid rgb(0, 255, 8); /* Example color for Fall 2025 cohort */
-}
-
-li.AllStudents {
-  border: 2px solid black;
-}
 .main li {
-  /* border: 2px solid black; */
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
   align-items: center;
   text-align: center;
+  transition: transform 0.3s ease;
+}
+.main li:hover {
+  transform: scale(1.1);
 }
 
 .main img {
@@ -75,18 +47,19 @@ li.AllStudents {
 
 .main h2 {
   margin: 0;
-  margin-top: 19px;
+  margin-top: 24px;
   width: 100%;
   color: black;
 }
 .main h3 {
   color: green;
   position: absolute;
-  margin-top: 355px;
+  z-index: 1;
+  margin-top: 237px;
   margin-left: 0px;
 }
 .main p {
-  margin-top: 15px;
+  margin-top: 7px;
   color: black;
 }
 

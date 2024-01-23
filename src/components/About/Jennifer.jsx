@@ -1,15 +1,19 @@
 const Jennifer = () => {
   return (
     <div>
+      <h2>Jennifer</h2>
       <img
-        src="https://xsgames.co/randomusers/avatar.php?g=male&minimum_age=38&maximum_age=48"
+        src="https://xsgames.co/randomusers/avatar.php?g=female&minimum_age=38&maximum_age=48"
         alt="photo of Jennifer Peterson"
       />
       <p>
-        Fun fact: I ❤️ to TRAVEL✈️, trying new FOODS 🍣 and I am currently
-        teaching myself to COOK 👩🏿‍🍳 (concentrating on plant-based meals 🥗)
+        Fun fact: I ❤️ to <span>TRAVEL</span>✈️, trying new <span>FOODS</span>
+        🍣 and I am currently teaching myself to <span>COOK 👩🏿‍🍳</span>
+        <span>(concentrating on plant-based meals 🥗)</span>
       </p>
-      <p>How to reach me 👩🏿‍💻</p>
+      <p>
+        <span>How to reach me 👩🏿‍💻</span>
+      </p>
       <ul>
         <a href="mailto:jenniferbushpeterson@gmail.com">
           <li>Email</li>
