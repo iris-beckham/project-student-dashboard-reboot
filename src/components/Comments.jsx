@@ -2,7 +2,7 @@ import "./Comments.css"
 const Comments = ({ student, comments }) => {
 
   return (
-      <div >
+      <div className="notes-container">
       <h3>Comments: {student.notes.length + comments.length}</h3>
       <ul className="all-notes">
         {student.notes.map((elem, index) => {

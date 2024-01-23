@@ -9,7 +9,7 @@ export const Home = ({ formattedDateOfBirth, filteredStudents, cohort }) => {
       <h2 className="student-num">Total Students: {filteredStudents.length}</h2>
       <div className="main">
       {filteredStudents.map(
-        ({ id, names, username, dob, profilePhoto, certifications }) => (
+        ({ id, names, username, dob, profilePhoto, certifications, codewars }) => (
           // this makes it where whenever we click the student it takes us to their page based on their id
           <Link key={id} to={`/${id}`}>
             <li>
@@ -17,7 +17,8 @@ export const Home = ({ formattedDateOfBirth, filteredStudents, cohort }) => {
                 {certifications.resume &&
                   certifications.linkedin &&
                   certifications.github &&
-                  certifications.mockInterview
+                  certifications.mockInterview &&
+                  codewars.current.total >= 850
                   ? "On track to Graduate"
                   : " "}
               </h3>

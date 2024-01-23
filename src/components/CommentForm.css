@@ -2,14 +2,16 @@
     margin: 0px;
     padding: 0px;
 }
-textarea {
+.comment {
     margin-top: 3px;
     width:98%;
     height: 15px;
     color: white;
 }
-textarea::placeholder {
+.comment::placeholder {
     transform: translateY(-20%);
+    color: white;
+    padding: 8px;
 }
 
 
@@ -23,11 +25,7 @@ textarea::placeholder {
     padding-bottom: 50px;
     padding-top: 10px;
 }
-.comment-form input{
-    color: white;
-    height: 5px;
-    margin-top: -10px;
-}
+
 .comment-form button{
     margin-top: 9px;
     margin-left: 74px;
@@ -39,11 +37,13 @@ textarea::placeholder {
     position: absolute;
 }
 .author {
-    width: 87%;
+    width: 12.3em;
+    color: white;
     background: black;
     border-radius: 10px;
     padding: 20px;
-    margin-top: 10px;
+    height: 5px;
+    margin-top: 0px;
     margin-left: -10px;
 }
 .author::placeholder {
@@ -52,12 +52,8 @@ textarea::placeholder {
 }
 .comment {
     background: black;
-    width: 92%;
+    width: 13em;
     border-radius: 10px;
     padding: 15px;
     margin-left: -10px;
-}
-.comment::placeholder {
-    color: white;
-    padding: 8px;
 }
