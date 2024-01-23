@@ -2,12 +2,45 @@
 
 Welcome to the Student Dashboard App! This Single Page Application (SPA) built with ReactJS allows instructors to track and display data for different cohorts of students.
 
+https://lively-entremet-6bc212.netlify.app/
+
 ## Table of Contents
+1. [Local Deployment](#deploy-locally)
 1. [About](#about)
 2. [Index View](#index-view)
 3. [Show View](#show-view)
 4. [1-on-1 Notes Section - Form](#1-on-1-notes-section---form)
 5. [Aside View - List of Cohorts](#aside-view---list-of-cohorts)
+
+## Deploy Locally
+1. Download the server from github
+```
+git clone https://github.com/10-3-pursuit/project-student-dashboard-reboot-server
+cd project-student-dashboard-reboot-server
+```
+2. Deploy the server locally
+```
+npm install
+npm run dev
+```
+3. Download the student dashboard 
+```
+git clone https://github.com/iris-beckham/project-student-dashboard-reboot.git
+cd project-student-dashboard-reboot
+```
+4. Create a .env file in the project folder
+1. Create a variable that links to your deployed server
+```
+//.env
+VITE_BASE_API_URL=http://localhost:<YOUR SERVER PORT HERE>/api/students
+```
+6.  Deploy the student dashboard 
+
+```
+npm install
+npm run dev
+```
+7. Access site at the port generated (i.e. http://localhost:5173)
 
 ## About
 Click on the "About" link to view information about each team member, including their name, GitHub, and a fun fact.
