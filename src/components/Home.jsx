@@ -4,7 +4,6 @@ import "./Home.css";
 
 export const Home = ({ formattedDateOfBirth, filteredStudents, cohort }) => {
   const cohorts = `${cohort.split(" ").join("")}`;
-  console.log(cohorts);
 
   // Get the button:
   let mybutton = document.getElementById("myBtn");
