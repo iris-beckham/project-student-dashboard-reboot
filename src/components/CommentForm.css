@@ -2,15 +2,22 @@
     margin: 0px;
     padding: 0px;
 }
-textarea {
-    margin-top: 20px;
+.comment {
+    margin-top: 3px;
     width:98%;
+    height: 15px;
     color: white;
 }
+.comment::placeholder {
+    transform: translateY(-20%);
+    color: white;
+    padding: 8px;
+}
+
 
 .comment-form {
     margin-top: 30px;
-    position: absolute;
+    /* position: absolute; */
     margin-left: 30px;
     align-items: center;
     padding-right: 200px; 
@@ -18,15 +25,11 @@ textarea {
     padding-bottom: 50px;
     padding-top: 10px;
 }
-.comment-form input{
-    color: white;
-}
+
 .comment-form button{
     margin-top: 9px;
-    margin-left: 34px;
-    width: 20%;
-    height: 10%;
-    position: absolute;
+    margin-left: 74px;
+    width: 60px;
 }
 .comment-form span{
     margin-top: -8px;
@@ -34,11 +37,13 @@ textarea {
     position: absolute;
 }
 .author {
-    width: 87%;
+    width: 12.3em;
+    color: white;
     background: black;
     border-radius: 10px;
     padding: 20px;
-    margin-top: 10px;
+    height: 5px;
+    margin-top: 0px;
     margin-left: -10px;
 }
 .author::placeholder {
@@ -47,12 +52,8 @@ textarea {
 }
 .comment {
     background: black;
-    width: 92%;
+    width: 13em;
     border-radius: 10px;
     padding: 15px;
     margin-left: -10px;
-}
-.comment::placeholder {
-    color: white;
-    padding: 8px;
 }

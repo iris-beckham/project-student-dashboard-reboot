@@ -5,11 +5,10 @@
 
 .container {
     border: 2px solid black;
-    position: absolute;
     width: 67%;
     margin-top: -460px;
     margin-left: 440px;
-    padding-bottom: 50%;
+    padding-bottom: 30px;
 }
 
 .main-content img{
@@ -44,12 +43,15 @@
     margin-top: 30px;
     width: 68%;
     background: rgb(48, 45, 45);
-    position: absolute;
-    padding-bottom: 40%;
+    /* position: absolute; */
+    /* padding-bottom: 40%; */
 }
 .notes h2 {
     color: white;
     text-align: center;
     margin-left: 6px;
     margin-top: 20px;
+    padding-top:12px ;
 }
+
+
