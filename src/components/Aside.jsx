@@ -3,7 +3,21 @@ import { useState } from "react"
 import "./Aside.css"
 
 
-export const Aside = ({ handleChange }) => {
+export const Aside = ({ setFilteredStudents, students, setCohort }) => {
+  const handleChange = (e) => {
+    const cohortName = e.target.textContent;
+    setCohort(cohortName);
+    if (cohortName === "All Students") {
+      setFilteredStudents(students);
+    } else {
+      const newFilteredStudents = students.filter(
+        (student) =>
+          student.cohort.cohortCode === cohortName.split(" ").join("")
+      );
+      setFilteredStudents(newFilteredStudents);
+    }
+  };
+
   //ascending/descending state
   //true = ascending (2025->2026), false = descending (2026->2025)
   const [sortingDirection, setSortingDirection] = useState(true);
