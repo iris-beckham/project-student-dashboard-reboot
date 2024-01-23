@@ -60,6 +60,10 @@ footer {
     .main h3 {
         margin-top: 14%;
     }
+    .filters {
+        gap: 15px;
+        margin-left: -50px;
+    }
     
 }
 
@@ -319,6 +323,10 @@ footer {
     }
     .aside-ul {
         width: 30%;
+    }
+    .filters {
+        gap: 15px;
+        margin-left: -50px;
     }
 }
 @media (max-width: 1060px) {
