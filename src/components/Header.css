@@ -2,7 +2,6 @@
     margin: 0px;
     padding: 0px;
 }
-
 .headerOne {
     display: flex;
     justify-content: center;
@@ -11,7 +10,6 @@
     background-color: green;
     margin-top: 0px;
 }
-
 .headerOne :any-link {
     text-decoration: none;
     color: white;
