@@ -28,7 +28,6 @@ export const Home = ({ formattedDateOfBirth, filteredStudents, cohort }) => {
               </h2>
               <p>{username}</p>
               <p>{formattedDateOfBirth(dob)}</p>
-              <button>Unenroll</button>
             </li>
           </Link>
         )
