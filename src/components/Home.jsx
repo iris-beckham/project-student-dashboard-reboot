@@ -5,6 +5,24 @@ import "./Home.css";
 export const Home = ({ formattedDateOfBirth, filteredStudents, cohort }) => {
   const cohorts = `${cohort.split(" ").join("")}`;
 
+  // Get the button:
+  let mybutton = document.getElementById("myBtn");
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () { scrollFunction() };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 && mybutton) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   return (
     <div>
       <h1 className={`cohort ${cohort.split(" ").join("")}`}>
@@ -28,10 +46,10 @@ export const Home = ({ formattedDateOfBirth, filteredStudents, cohort }) => {
               <li>
                 <h3>
                   {certifications.resume &&
-                  certifications.linkedin &&
-                  certifications.github &&
-                  certifications.mockInterview &&
-                  codewars.current.total >= 850
+                    certifications.linkedin &&
+                    certifications.github &&
+                    certifications.mockInterview &&
+                    codewars.current.total >= 850
                     ? "On track to Graduate"
                     : " "}
                 </h3>
@@ -46,6 +64,7 @@ export const Home = ({ formattedDateOfBirth, filteredStudents, cohort }) => {
           )
         )}
       </div>
+      <button onClick={handleScrollToTop} id="myBtn" title="Go to top">🔝</button>
     </div>
   );
 };
