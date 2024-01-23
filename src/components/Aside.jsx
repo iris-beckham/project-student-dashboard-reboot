@@ -8,7 +8,7 @@ export const Aside = ({ setFilteredStudents, students, setCohort }) => {
     const cohortName = e.target.textContent;
     setCohort(cohortName);
     if (cohortName === "All Students") {
-      setFilteredStudents(students);
+      setFilteredStudents(applyFilters(students));
     } else {
       const newFilteredStudents = students.filter(
         (student) =>
@@ -16,17 +16,11 @@ export const Aside = ({ setFilteredStudents, students, setCohort }) => {
       );
       setFilteredStudents(applyFilters(newFilteredStudents))
     }
+    resetFilters()
   };
 
   const applyFilters = (students) => {
-    let filteredStudents = [...students]
-    if (onTrack) {
-      setResume(true);
-      setLinkedin(true);
-      setGithub(true);
-      setInterview(true);
-      setCodewars(true);
-    }
+    let filteredStudents = [...students];
     if (resume) {
       filteredStudents = filteredStudents.filter((student) => student.certifications.resume === true);
     }
@@ -45,6 +39,15 @@ export const Aside = ({ setFilteredStudents, students, setCohort }) => {
     return filteredStudents;
   }
 
+  const resetFilters = () => {
+    document.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
+    setResume(false);
+    setLinkedin(false);
+    setGithub(false);
+    setInterview(false);
+    setCodewars(false);
+  }
+
   //ascending/descending state
   //true = ascending (2025->2026), false = descending (2026->2025)
   const [sortingDirection, setSortingDirection] = useState(true);
@@ -61,6 +64,16 @@ export const Aside = ({ setFilteredStudents, students, setCohort }) => {
   const [codewars, setCodewars] = useState(false);
   const [onTrack, setOnTrack] = useState(false);
 
+
+  const handleOnTrackCheckbox = (e) => {
+    if (e.target.checked) {
+      setResume(true);
+      setLinkedin(true);
+      setGithub(true);
+      setInterview(true);
+      setCodewars(true);
+    }
+  }
   const handleResumeCheckbox = (e) => {
     setResume(e.target.checked);
   }
@@ -75,9 +88,6 @@ export const Aside = ({ setFilteredStudents, students, setCohort }) => {
   }
   const handleCodewarsCheckbox = (e) => {
     setCodewars(e.target.checked);
-  }
-  const handleOnTrackCheckbox = (e) => {
-    setOnTrack(e.target.checked);
   }
 
 
