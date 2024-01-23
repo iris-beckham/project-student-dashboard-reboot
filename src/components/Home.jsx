@@ -1,7 +1,6 @@
 // this link will be used to take us to the indivual students information
 import { Link } from "react-router-dom";
 import "./Home.css";
-import { useState, useEffect } from "react";
 
 export const Home = ({ formattedDateOfBirth, filteredStudents, cohort }) => {
   const cohorts = `${cohort.split(" ").join("")}`;
