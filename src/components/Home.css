@@ -55,6 +55,9 @@ li.Spring2026 {
   border: 2px solid rgb(0, 255, 8); /* Example color for Fall 2025 cohort */
 }
 
+li.AllStudents {
+  border: 2px solid black;
+}
 .main li {
   /* border: 2px solid black; */
   display: flex;
