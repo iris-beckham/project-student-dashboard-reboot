@@ -3,7 +3,51 @@ import { useState } from "react"
 import "./Aside.css"
 
 
-export const Aside = ({ handleChange }) => {
+export const Aside = ({ setFilteredStudents, students, setCohort }) => {
+  const handleChange = (e) => {
+    const cohortName = e.target.textContent;
+    setCohort(cohortName);
+    if (cohortName === "All Students") {
+      setFilteredStudents(applyFilters(students));
+    } else {
+      const newFilteredStudents = students.filter(
+        (student) =>
+          student.cohort.cohortCode === cohortName.split(" ").join("")
+      );
+      setFilteredStudents(applyFilters(newFilteredStudents))
+    }
+    resetFilters()
+  };
+
+  const applyFilters = (students) => {
+    let filteredStudents = [...students];
+    if (resume) {
+      filteredStudents = filteredStudents.filter((student) => student.certifications.resume === true);
+    }
+    if (linkedin) {
+      filteredStudents = filteredStudents.filter((student) => student.certifications.linkedin === true);
+    }
+    if (github) {
+      filteredStudents = filteredStudents.filter((student) => student.certifications.github === true);
+    }
+    if (interview) {
+      filteredStudents = filteredStudents.filter((student) => student.certifications.mockInterview === true);
+    }
+    if (codewars) {
+      filteredStudents = filteredStudents.filter((student) => student.codewars.current.total >= 850);
+    }
+    return filteredStudents;
+  }
+
+  const resetFilters = () => {
+    document.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
+    setResume(false);
+    setLinkedin(false);
+    setGithub(false);
+    setInterview(false);
+    setCodewars(false);
+  }
+
   //ascending/descending state
   //true = ascending (2025->2026), false = descending (2026->2025)
   const [sortingDirection, setSortingDirection] = useState(true);
@@ -13,11 +57,73 @@ export const Aside = ({ handleChange }) => {
     cohortArr = [cohortArr[0], ...cohortArr.slice(1).reverse()]
   }
 
+  const [resume, setResume] = useState(false);
+  const [linkedin, setLinkedin] = useState(false);
+  const [github, setGithub] = useState(false);
+  const [interview, setInterview] = useState(false);
+  const [codewars, setCodewars] = useState(false);
+  const [onTrack, setOnTrack] = useState(false);
+
+
+  const handleOnTrackCheckbox = (e) => {
+    if (e.target.checked) {
+      setResume(true);
+      setLinkedin(true);
+      setGithub(true);
+      setInterview(true);
+      setCodewars(true);
+    }
+  }
+  const handleResumeCheckbox = (e) => {
+    setResume(e.target.checked);
+  }
+  const handleLinkedinCheckbox = (e) => {
+    setLinkedin(e.target.checked);
+  }
+  const handleGithubCheckbox = (e) => {
+    setGithub(e.target.checked);
+  }
+  const handleInterviewCheckbox = (e) => {
+    setInterview(e.target.checked);
+  }
+  const handleCodewarsCheckbox = (e) => {
+    setCodewars(e.target.checked);
+  }
+
 
   return (
-    <>
-      <h2 className="aside-h2">Choose A Class By Start Date</h2>
-      <button className='aside-button' onClick={() => setSortingDirection(!sortingDirection)}>Sort {sortingDirection ? 'Descending' : 'Ascending'} By Year</button>
+    <aside>
+      <form>
+        <h2>Filters:</h2>
+        <label htmlFor="">
+          <input type="checkbox" name="resume" value={resume} onChange={handleResumeCheckbox} />
+          Certified Resume
+        </label>
+        <label htmlFor="">
+          <input type="checkbox" name="linkedin" value={linkedin} onChange={handleLinkedinCheckbox} />
+          Certified LinkedIn
+        </label>
+        <label htmlFor="">
+          <input type="checkbox" value={github} onChange={handleGithubCheckbox} />
+          Certified GitHub
+        </label>
+        <label htmlFor="">
+          <input type="checkbox" value={interview} onChange={handleInterviewCheckbox} />
+          Certified Mock Interview
+        </label>
+        <label htmlFor="">
+          <input type="checkbox" value={codewars} onChange={handleCodewarsCheckbox} />
+          Codewars score 850 and over
+        </label>
+        <label htmlFor="">
+          <input type="checkbox" value={onTrack} onChange={handleOnTrackCheckbox} />
+          On track
+        </label>
+      </form>
+      <h2>Choose A Class By Start Date</h2>
+      <button onClick={() => setSortingDirection(!sortingDirection)}>
+        Sort {sortingDirection ? 'Descending' : 'Ascending'} By Year
+      </button>
       <ul className="aside-ul">
         {cohortArr.map(elem => {
           return (
@@ -26,6 +132,6 @@ export const Aside = ({ handleChange }) => {
             </Link>)
         })}
       </ul>
-    </>
+    </aside>
   )
 }

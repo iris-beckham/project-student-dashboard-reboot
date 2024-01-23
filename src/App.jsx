@@ -13,26 +13,11 @@ import Student from "./components/Student";
 function App() {
   //students state
   const [students, setStudents] = useState([]);
-
-  // filtered students state
-  const [filteredStudents, setFilteredStudents] = useState([]);
-
   //state for cohort name
   const [cohort, setCohort] = useState("All Students");
 
-  const handleChange = (e) => {
-    const cohortName = e.target.textContent;
-    setCohort(cohortName);
-    if (cohortName === "All Students") {
-      setFilteredStudents(students);
-    } else {
-      const newFilteredStudents = students.filter(
-        (student) =>
-          student.cohort.cohortCode === cohortName.split(" ").join("")
-      );
-      setFilteredStudents(newFilteredStudents);
-    }
-  };
+  // filtered students state
+  const [filteredStudents, setFilteredStudents] = useState([]);
 
   useEffect(() => {
     getAllStudents().then((data) => {
@@ -72,7 +57,7 @@ function App() {
   return (
     <div>
       <Header />
-      <Aside handleChange={handleChange} />
+      <Aside setFilteredStudents={setFilteredStudents} students={students} setCohort={setCohort} />
 
       <Routes>
         <Route path="/">
