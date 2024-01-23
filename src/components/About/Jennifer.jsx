@@ -1,6 +1,8 @@
+import "../About.css"
+
 const Jennifer = () => {
   return (
-    <div>
+    <div className="dev-div">
       <h2>Jennifer</h2>
       <img
         src="https://xsgames.co/randomusers/avatar.php?g=female&minimum_age=38&maximum_age=48"
@@ -16,25 +18,18 @@ const Jennifer = () => {
       </p>
       <ul>
         <a href="mailto:jenniferbushpeterson@gmail.com">
-          <li>Email</li>
-        </a>
-        <a
-          href="https://github.com/JenniferPeterson1203"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <li>GitHub</li>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/jennifer--peterson/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <li>LinkedIn</li>
-        </a>
+                <img src="https://www.carolibrary.org/site-assets/images/emailicon.png/@@images/image.png" alt="Email" />
+            </a>
+            <a href="https://github.com/JenniferPeterson1203" target="_blank" rel="noopener noreferrer">
+                <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub" />
+            </a>
+            <a href="https://www.linkedin.com/in/jennifer--peterson/" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png" alt="LinkedIn" />
+            </a>
       </ul>
     </div>
   );
 };
 
 export default Jennifer;
+
