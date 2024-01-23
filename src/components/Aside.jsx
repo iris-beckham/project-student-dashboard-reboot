@@ -93,7 +93,7 @@ export const Aside = ({ setFilteredStudents, students, setCohort }) => {
 
   return (
     <aside>
-      <form>
+      <form className="filters">
         <h2>Filters:</h2>
         <label htmlFor="">
           <input type="checkbox" name="resume" value={resume} onChange={handleResumeCheckbox} />
