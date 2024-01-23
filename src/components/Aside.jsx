@@ -14,9 +14,29 @@ export const Aside = ({ setFilteredStudents, students, setCohort }) => {
         (student) =>
           student.cohort.cohortCode === cohortName.split(" ").join("")
       );
-      setFilteredStudents(newFilteredStudents);
+      setFilteredStudents(applyFilters(newFilteredStudents))
     }
   };
+
+  const applyFilters = (students) => {
+    let filteredStudents = [...students]
+    if (resume) {
+      filteredStudents = filteredStudents.filter((student) => student.certifications.resume === true);
+    }
+    if (linkedin) {
+      filteredStudents = filteredStudents.filter((student) => student.certifications.linkedin === true);
+    }
+    if (github) {
+      filteredStudents = filteredStudents.filter((student) => student.certifications.github === true);
+    }
+    if (interview) {
+      filteredStudents = filteredStudents.filter((student) => student.certifications.mockInterview === true);
+    }
+    if (codewars) {
+      filteredStudents = filteredStudents.filter((student) => student.codewars.current.total >= 850);
+    }
+    return filteredStudents;
+  }
 
   //ascending/descending state
   //true = ascending (2025->2026), false = descending (2026->2025)
@@ -52,23 +72,11 @@ export const Aside = ({ setFilteredStudents, students, setCohort }) => {
   const handleOnTrackCheckbox = (e) => {
     setOnTrack(e.target.checked);
   }
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+
 
   return (
     <aside>
-      <h2>Choose A Class By Start Date</h2>
-      <button onClick={() => setSortingDirection(!sortingDirection)}>Sort {sortingDirection ? 'Descending' : 'Ascending'} By Year</button>
-      <ul className="aside-ul">
-        {cohortArr.map(elem => {
-          return (
-            <Link className="cohorts" key={elem} to='/'>
-              <li onClick={handleChange}>{elem}</li>
-            </Link>)
-        })}
-      </ul>
-      <form onSubmit={handleSubmit}>
+      <form>
         <h3>Filters:</h3>
         <label htmlFor="">
           <input type="checkbox"
@@ -107,15 +115,17 @@ export const Aside = ({ setFilteredStudents, students, setCohort }) => {
           />
           Codewars score 850 and over
         </label>
-        <label htmlFor="">
-          <input type="checkbox"
-            value={onTrack}
-            onChange={handleOnTrackCheckbox}
-          />
-          On track
-        </label>
-        <button type="submit">Submit</button>
       </form>
+      <h2>Choose A Class By Start Date</h2>
+      <button onClick={() => setSortingDirection(!sortingDirection)}>Sort {sortingDirection ? 'Descending' : 'Ascending'} By Year</button>
+      <ul className="aside-ul">
+        {cohortArr.map(elem => {
+          return (
+            <Link className="cohorts" key={elem} to='/'>
+              <li onClick={handleChange}>{elem}</li>
+            </Link>)
+        })}
+      </ul>
     </aside>
   )
 }
