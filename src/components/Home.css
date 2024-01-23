@@ -3,18 +3,15 @@
   padding: 0px;
   text-decoration: none;
 }
-
 .cohort {
   margin-top: -490px;
   margin-left: 468px;
   font-size: 40px;
 }
-
 .student-num {
   margin-top: -20px;
   margin-left: 470px;
 }
-
 .main {
   margin-left: 470px;
   display: grid;
@@ -25,7 +22,6 @@
   list-style-type: none;
   margin-top: 20px;
 }
-
 .main li {
   border: 2px solid black;
   display: flex;
@@ -38,13 +34,11 @@
 .main li:hover {
   transform: scale(1.1);
 }
-
 .main img {
   margin-top: 20px;
   border-radius: 50%;
   width: 50%;
 }
-
 .main h2 {
   margin: 0;
   margin-top: 24px;
@@ -62,7 +56,6 @@
   margin-top: 7px;
   color: black;
 }
-
 .main button {
   width: 50%;
   padding: 10px;

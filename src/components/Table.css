@@ -9,17 +9,14 @@ table {
     margin-left: 260px;
     border-radius: 100px;
   }
-  
   th, td {
     border: 1px solid black; 
     padding: 8px; 
     text-align: left; 
   }
-  
   th {
     width: 33%; 
   }
-  
   td {
     width: 33%; 
   }

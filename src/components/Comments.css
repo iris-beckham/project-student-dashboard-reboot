@@ -2,20 +2,15 @@
     margin: 0px;
     padding: 0px;
 }
-
 h3 {
     margin-top: -25px;
     margin-left: 280px;
     color: white;
 }
-
 .all-notes {
     height: 180px;
     overflow-y: scroll;
 }
-
-
-
 .all-notes li {   
     margin-left: 79px;
     margin-top: 34px;
@@ -27,4 +22,3 @@ h3 {
     margin-bottom: 40px;
     list-style-type: none;
 }
-

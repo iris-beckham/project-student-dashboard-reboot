@@ -4,7 +4,6 @@ import "./Home.css";
 
 export const Home = ({ formattedDateOfBirth, filteredStudents, cohort }) => {
   const cohorts = `${cohort.split(" ").join("")}`;
-  console.log(cohorts);
 
   return (
     <div>
