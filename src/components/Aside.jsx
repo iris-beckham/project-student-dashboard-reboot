@@ -20,6 +20,13 @@ export const Aside = ({ setFilteredStudents, students, setCohort }) => {
 
   const applyFilters = (students) => {
     let filteredStudents = [...students]
+    if (onTrack) {
+      setResume(true);
+      setLinkedin(true);
+      setGithub(true);
+      setInterview(true);
+      setCodewars(true);
+    }
     if (resume) {
       filteredStudents = filteredStudents.filter((student) => student.certifications.resume === true);
     }
@@ -77,47 +84,36 @@ export const Aside = ({ setFilteredStudents, students, setCohort }) => {
   return (
     <aside>
       <form>
-        <h3>Filters:</h3>
+        <h2>Filters:</h2>
         <label htmlFor="">
-          <input type="checkbox"
-            name="resume"
-            value={resume}
-            onChange={handleResumeCheckbox}
-          />
+          <input type="checkbox" name="resume" value={resume} onChange={handleResumeCheckbox} />
           Certified Resume
         </label>
         <label htmlFor="">
-          <input type="checkbox"
-            name="linkedin"
-            value={linkedin}
-            onChange={handleLinkedinCheckbox}
-          />
+          <input type="checkbox" name="linkedin" value={linkedin} onChange={handleLinkedinCheckbox} />
           Certified LinkedIn
         </label>
         <label htmlFor="">
-          <input type="checkbox"
-            value={github}
-            onChange={handleGithubCheckbox}
-          />
+          <input type="checkbox" value={github} onChange={handleGithubCheckbox} />
           Certified GitHub
         </label>
         <label htmlFor="">
-          <input type="checkbox"
-            value={interview}
-            onChange={handleInterviewCheckbox}
-          />
+          <input type="checkbox" value={interview} onChange={handleInterviewCheckbox} />
           Certified Mock Interview
         </label>
         <label htmlFor="">
-          <input type="checkbox"
-            value={codewars}
-            onChange={handleCodewarsCheckbox}
-          />
+          <input type="checkbox" value={codewars} onChange={handleCodewarsCheckbox} />
           Codewars score 850 and over
+        </label>
+        <label htmlFor="">
+          <input type="checkbox" value={onTrack} onChange={handleOnTrackCheckbox} />
+          On track
         </label>
       </form>
       <h2>Choose A Class By Start Date</h2>
-      <button onClick={() => setSortingDirection(!sortingDirection)}>Sort {sortingDirection ? 'Descending' : 'Ascending'} By Year</button>
+      <button onClick={() => setSortingDirection(!sortingDirection)}>
+        Sort {sortingDirection ? 'Descending' : 'Ascending'} By Year
+      </button>
       <ul className="aside-ul">
         {cohortArr.map(elem => {
           return (
