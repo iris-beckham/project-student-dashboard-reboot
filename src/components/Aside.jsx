@@ -8,16 +8,15 @@ export const Aside = ({ setFilteredStudents, students, setCohort }) => {
     const cohortName = e.target.textContent;
     setCohort(cohortName);
     if (cohortName === "All Students") {
-      setFilteredStudents(students);
-      // setFilteredStudents(applyFilters(students));
+      setFilteredStudents(applyFilters(students));
     } else {
       const newFilteredStudents = students.filter(
         (student) =>
           student.cohort.cohortCode === cohortName.split(" ").join("")
       );
       setFilteredStudents(applyFilters(newFilteredStudents))
-      resetFilters()
     }
+    resetFilters()
   };
 
   const applyFilters = (students) => {
